@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String connectionName = "app";
-                String serverUrl = "ws://192.168.0.27:8887";
+                String serverUrl = "ws://192.168.211.1:8887";
                 connectWebSocket(serverUrl, connectionName);
             }
         });
@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     private void sendMessage() {
         if (webSocketManager != null && webSocketManager.isOpen()) {
             String message = messageEditText.getText().toString();
-            message = webSocketManager.getConnectionName() + ": " + message;
             webSocketManager.send(message);
         }
     }

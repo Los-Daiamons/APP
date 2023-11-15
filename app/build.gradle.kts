@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.daiamons.app"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.daiamons.app"
