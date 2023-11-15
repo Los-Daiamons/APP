@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private WebSocketManager webSocketManager;
     private EditText messageEditText;
+    private EditText ipEditText; // Nuevo campo para la dirección IP
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +22,14 @@ public class MainActivity extends AppCompatActivity {
         Button connectButton = findViewById(R.id.button);
         Button sendButton = findViewById(R.id.button2);
         messageEditText = findViewById(R.id.editText);
+        ipEditText = findViewById(R.id.ipEditText); // Referencia al nuevo EditText
 
         connectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String connectionName = "app";
-                String serverUrl = "ws://192.168.211.1:8887";
+                String connectionName = "mobile";
+                String ipAddress = ipEditText.getText().toString(); // Obtener la dirección IP ingresada
+                String serverUrl = "ws://" + ipAddress + ":8887?name=" + connectionName; // Crear la URL con la dirección IP";
                 connectWebSocket(serverUrl, connectionName);
             }
         });
