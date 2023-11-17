@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void connectWebSocket(String serverUrl) {
         try {
-            webSocketManager = new WebSocketManager(new URI(serverUrl));
+            webSocketManager = new WebSocketManager(new URI(serverUrl), this);
 
             webSocketManager.connect();
 
@@ -77,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void actualizarTextView(String numMobiles, String numDesktops) {
         runOnUiThread(() -> {
-            mobileConnectionsTextView.setText("Conexiones desde movil: " + numMobiles);
-            desktopConnectionsTextView.setText("Conexiones desde desktop: " + numDesktops);
+            mobileConnectionsTextView.setText("Mobile Connections: " + numMobiles);
+            desktopConnectionsTextView.setText("Desktop Connections: " + numDesktops);
         });
     }
 }
