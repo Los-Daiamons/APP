@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 String connectionName = "mobile";
                 String ipAddress = ipEditText.getText().toString();
                 String serverUrl = "ws://" + ipAddress + ":8887?name=" + connectionName;
-                connectWebSocket(serverUrl, connectionName);
+                connectWebSocket(serverUrl);
             }
         });
 
@@ -48,10 +48,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void connectWebSocket(String serverUrl, String connectionName) {
+    private void connectWebSocket(String serverUrl) {
         try {
-            webSocketManager = new WebSocketManager(new URI(serverUrl), mobileConnectionsTextView, desktopConnectionsTextView);
-            webSocketManager.setConnectionName(connectionName);
+            webSocketManager = new WebSocketManager(new URI(serverUrl));
 
             webSocketManager.connect();
 
@@ -75,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
         if (webSocketManager != null) {
             webSocketManager.close();
         }
+    }
+    public void actualizarTextView(String numMobiles, String numDesktops) {
+        runOnUiThread(() -> {
+            mobileConnectionsTextView.setText("Conexiones desde movil: " + numMobiles);
+            desktopConnectionsTextView.setText("Conexiones desde desktop: " + numDesktops);
+        });
     }
 }
 
