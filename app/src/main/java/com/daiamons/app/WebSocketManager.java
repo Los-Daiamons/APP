@@ -2,8 +2,6 @@ package com.daiamons.app;
 
 import android.app.Activity;
 import android.widget.TextView;
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
 import org.java_websocket.WebSocket;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
