@@ -16,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class WebSocketManager extends WebSocketClient {
 
-    private MainActivity mainActivity;
+    private final MainActivity mainActivity;
 
     public WebSocketManager(URI serverUri, MainActivity mainActivity) {
         super(serverUri);
@@ -49,12 +49,22 @@ public class WebSocketManager extends WebSocketClient {
 
     @Override
     public void onClose(int code, String reason, boolean remote) {
+        setConnCountToZero();
+
     }
 
     @Override
     public void onError(Exception ex) {
+        setConnCountToZero();
     }
 
+    public void setConnCountToZero() {
+        int mobileConnections = 0;
+        int desktopConnections = 0;
+
+        // Llamar al método en MainActivity para actualizar los TextView
+        mainActivity.actualizarTextView(String.valueOf(mobileConnections), String.valueOf(desktopConnections));
+    }
 }
 
 
