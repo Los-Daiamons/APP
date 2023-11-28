@@ -6,32 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="132dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="#2E9502"
-        android:backgroundTintMode="add"
-        android:text="CONNECTAR"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ipEditText" />
-
-    <TextView
-        android:id="@+id/mobileConnectionsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mobile Connections: 0"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/desktopConnectionsTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.422" />
-
     <EditText
         android:id="@+id/ipEditText"
         android:layout_width="315dp"
@@ -69,18 +43,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/desktopConnectionsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Desktop Connections: 0"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="99dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="188dp"
+        android:backgroundTint="#1B93EF"
+        android:text="ENVIAR"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.663" />
+        app:strokeColor="#DF0D0D" />
 
     <EditText
         android:id="@+id/editText"
@@ -94,19 +67,46 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintVertical_bias="0.797" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="99dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="208dp"
-        android:backgroundTint="#1B93EF"
-        android:text="ENVIAR"
+    <TextView
+        android:id="@+id/desktopConnectionsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desktop Connections: 0"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:strokeColor="#DF0D0D" />
+        app:layout_constraintVertical_bias="0.666" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="132dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#2E9502"
+        android:backgroundTintMode="add"
+        android:text="CONNECTAR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ipEditText" />
+
+    <TextView
+        android:id="@+id/mobileConnectionsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile Connections: 0"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/desktopConnectionsTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.208" />
 
     <Button
         android:id="@+id/button4"
@@ -117,5 +117,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ipEditText3" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="Lista"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.daiamons.app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Button connectButton;
     private Button sendButton;
     private Button loginButton;
+    private boolean isConnected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +42,25 @@ public class MainActivity extends AppCompatActivity {
         mobileConnectionsTextView = findViewById(R.id.mobileConnectionsTextView);
         desktopConnectionsTextView = findViewById(R.id.desktopConnectionsTextView);
         loginButton = findViewById(R.id.button4);
+        Button messageListButton = findViewById(R.id.button3);
 
+        checkConnectionStatus();
         connectButton.setEnabled(false);
         sendButton.setEnabled(false);
+        messageListButton.setEnabled(isConnected);
 
         ipEditText2.addTextChangedListener(textWatcher);
         ipEditText3.addTextChangedListener(textWatcher);
+
+        messageListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isConnected) {
+                    Intent intent = new Intent(MainActivity.this, MessageListActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
                 sendButton.setEnabled(true);
             }
         });
+    }
+
+    private void checkConnectionStatus() {
+        isConnected = webSocketManager != null && webSocketManager.getConnection().isOpen();
+    }
 
 
 
