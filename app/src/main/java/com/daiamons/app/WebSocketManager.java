@@ -30,7 +30,6 @@ public class WebSocketManager extends WebSocketClient {
 
     @Override
     public void onMessage(String message) {
-        // Manejar el mensaje recibido
         try {
             JSONObject jsonObject = new JSONObject(message);
             String type = jsonObject.getString("type");
@@ -39,7 +38,6 @@ public class WebSocketManager extends WebSocketClient {
                 int mobileConnections = jsonObject.getInt("mobile_connections");
                 int desktopConnections = jsonObject.getInt("desktop_connections");
 
-                // Llamar al método en MainActivity para actualizar los TextView
                 mainActivity.actualizarTextView(String.valueOf(mobileConnections), String.valueOf(desktopConnections));
             }
         } catch (JSONException e) {
@@ -62,7 +60,6 @@ public class WebSocketManager extends WebSocketClient {
         int mobileConnections = 0;
         int desktopConnections = 0;
 
-        // Llamar al método en MainActivity para actualizar los TextView
         mainActivity.actualizarTextView(String.valueOf(mobileConnections), String.valueOf(desktopConnections));
     }
 }

@@ -1,0 +1,26 @@
+<!-- res/layout/item_message.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#A7C7F4"
+    android:backgroundTint="#62A5C1"
+    android:backgroundTintMode="screen"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="385dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:fadingEdge="vertical"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="385dp"
+        android:layout_height="26dp"
+        android:textColor="#808080"
+        android:textSize="16sp" />
+
+</LinearLayout>
